@@ -28,7 +28,7 @@ export default function WeatherBoard(){
         const date = new Date(unixDt * 1000);
         const dayName = days[date.getDay()];
         const weatherIconUrl = `http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`
-        return <WeatherCard key={unixDt} unixDt={unixDt} dayName={dayName} weatherIconUrl={weatherIconUrl} dailyMax={day.temp.max} dailyMin={day.temp.min}></WeatherCard>
+        return <WeatherCard key={unixDt} dayName={dayName} weatherIconUrl={weatherIconUrl} dailyMax={day.temp.max} dailyMin={day.temp.min}></WeatherCard>
       })
       //TO-DO: React-router
       return (

@@ -1,14 +1,13 @@
 import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
-import { Link } from "react-router-dom";
 
 // TO-DO: Highlight if clicked on
-export default function WeatherCard({unixDt, dayName, weatherIconUrl, dailyMax, dailyMin}){
+export default function WeatherCard({dayName, weatherIconUrl, dailyMax, dailyMin}){
     return (
     <Col>
       <Card>
         <Card.Body>
-          <Card.Title><Link to={'/' + dayName + '/' + unixDt}>{dayName}</Link></Card.Title>
+          <Card.Title>{dayName}</Card.Title>
           <Card.Subtitle>{dailyMax}°C</Card.Subtitle>
           <Card.Subtitle className='text-muted'>{dailyMin}°C</Card.Subtitle>
         </Card.Body>
