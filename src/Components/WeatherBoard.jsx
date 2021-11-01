@@ -1,12 +1,6 @@
 import { useState, useEffect } from 'react'
 import Row from 'react-bootstrap/Row'
 import WeatherCard from './WeatherCard'
-import WeatherGraph from './WeatherGraph'
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-  } from "react-router-dom";
 
 export default function WeatherBoard(){
     const [dailyData, setDailyData] = useState([])
@@ -36,15 +30,10 @@ export default function WeatherBoard(){
         const weatherIconUrl = `http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`
         return <WeatherCard key={unixDt} unixDt={unixDt} dayName={dayName} weatherIconUrl={weatherIconUrl} dailyMax={day.temp.max} dailyMin={day.temp.min}></WeatherCard>
       })
-  
+      //TO-DO: React-router
       return (
-        <Router>
-            <Row>
-            {dailyWeatherCards}
-            </Row>
-            <Switch>
-                <Route path="/:dayName/:unixDt" component={WeatherGraph}></Route>
-            </Switch>
-        </Router>
+        <Row>
+        {dailyWeatherCards}
+        </Row>
       )
   }
